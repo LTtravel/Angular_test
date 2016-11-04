@@ -25,4 +25,9 @@ var cartsController = function($scope){
 			price:'599'
 		}
 	];
+	$scope.reduce = function(id){
+		var keyid = findIndex(id);
+		--$scope.carts[keyid].quantity;
+		//console.log(the_id);
+	};
 }
