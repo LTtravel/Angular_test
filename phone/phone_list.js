@@ -25,9 +25,22 @@ var cartsController = function($scope){
 			price:'599'
 		}
 	];
+	var findIndex = function(id){
+		var index = -1;
+		angular.forEach($scope.carts,function(item,key){
+			if(item.id == id){
+				index = key;
+			}
+		});
+		return index;
+	};
 	$scope.reduce = function(id){
 		var keyid = findIndex(id);
 		--$scope.carts[keyid].quantity;
 		//console.log(the_id);
+	};
+	$scope.add = function(id){
+		var keyid = findIndex(id);
+		++$scope.carts[id].quantity;
 	};
 }
