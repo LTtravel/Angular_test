@@ -41,6 +41,22 @@ var cartsController = function($scope){
 	};
 	$scope.add = function(id){
 		var keyid = findIndex(id);
-		++$scope.carts[id].quantity;
+		++$scope.carts[keyid].quantity;
+	};
+	$scope.totalPri = function(id){
+		var total = 0;
+		angular.forEach($scope.carts,function(item){
+			var sum = item.price * item.quantity;
+			total +=sum;
+		});
+		return total;
+	};
+	$scope.totalNum = function(id){
+		var num = 0;
+		angular.forEach($scope.carts,function(item){
+			var n = parseInt(item.quantity);
+			num +=n;
+		});
+		return num;
 	};
 }
