@@ -1,5 +1,5 @@
 var cartsController = function($scope){
-	$scope.cart = [
+	$scope.carts = [
 		{
 			id:2099,
 			name:'vivo y18l',
@@ -58,5 +58,8 @@ var cartsController = function($scope){
 			num +=n;
 		});
 		return num;
+	};
+	$scope.destroy = function(){
+		$scope.carts = {};
 	};
 }
