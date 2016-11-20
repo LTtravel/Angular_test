@@ -39,7 +39,11 @@
 					<td>{{totalNum()}}</td>
 					<td>总价格：</td>
 					<td>{{totalPri()}}</td>
+					<td colspan="2">
+						<button ng-click="destroy()"  style="margin-left: 25px">清空购物车</button>
+					</td>
 				</tr>
+				<p ng-show="!carts.length" style="font-size: 20px;text-align: center;">你的购物车已经空了</p>
 			</tbody>
 		</table>
 	</div>
